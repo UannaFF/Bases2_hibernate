@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+ 
+    <class name="com.hibernate.Cliente" table="CLIENTE">
+        <id name="username"/>
+        <property name="contrasena"/>
+        <property name="correo"/>
+        <property name ="nombre"/>
+        <property name ="apellido"/>
+        <property name="fecha_nacimiento" type="date"/>
+        <property name="usuario_red"/>
+        <property name ="dinero_promocion"/>
+		<set name="tarjetas" table="tdc" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="numero" not-null="true"/>
+            </key>
+            <one-to-many class="com.hibernate.TDC"></one-to-many>
+        </set>
+ 
+   </class>
+</hibernate-mapping>

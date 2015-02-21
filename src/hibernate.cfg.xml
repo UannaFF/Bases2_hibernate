@@ -25,10 +25,13 @@
 
         <!-- Drop the existing tables and create new one -->
         <property name="hbm2ddl.auto">create</property>
- 
+ 		
         <!-- Mention here all the model classes along with their package name -->
  		<!-- <mapping class="com.hibernate.TDC.hbm.xml"/> -->
- 		<mapping resource="Cliente.hbm.xml"/>
- 		<mapping resource="TDC.hbm.xml"/>
+ 		<!-- <mapping class="com.hibernate.Sede.hbm.xml"/> -->
+ 		<mapping resource="com/hibernate/Cliente.hbm.xml"/>
+ 		<mapping resource="com/hibernate/TDC.hbm.xml"/>
+ 		<mapping resource = "com/hibernate/Empresa.hbm.xml"/>
+ 		<mapping resource = "com/hibernate/Sede.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

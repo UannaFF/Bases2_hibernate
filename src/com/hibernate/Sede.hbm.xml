@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hibernate">
+
+	<class name="com.hibernate.Sede" table="SEDE">
+		<id name= "id_sede"/>
+		<property name="ubicacion"/>
+		<property name="telefonos"/>
+		<property name="moneda"/>
+
+		<!-- fetch="select" The fetch attribute tells hibernate how to get the 
+			children. -->
+		<!-- fetch="select" lo que hace es recuperar de la bd o seleccionar el 
+			dpto en donde trabaja el empleado -->
+		<many-to-one name="empresa" class="com.hibernate.Empresa" fetch="select">
+			<column name="id_empresa" not-null="true"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>
