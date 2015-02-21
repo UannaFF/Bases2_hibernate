@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hibernate">
+ 
+    <class name="Cliente" table="CLIENTE">
+        <id name="username"/>
+        <property name="contrasena"/>
+        <property name="correo"/>
+        <property name ="nombre"/>
+        <property name ="apellido"/>
+        <property name="fecha_nacimiento" type="date"/>
+        <property name="usuario_red"/>
+        <property name ="dinero_promocion"/>
+ 
+ 		<!--inverse="true" lazy="true" fetch="select" QUE ES  -->
+ 		<!--  Con fetch="select" recupera todos los empleados del dpto -->
+ 		<!--  Con lazy="true" se le dice a Hibernate cuando va a recuperar los empleados del dpto
+ 		que será justo cuando los seleccione -->
+ 		<!-- Con inverse="true" se dice quien es el propietario de la relación, en este caso
+ 		     la clase propietaria de la relación es empleado. -->
+        <set name="tarjetas" table="TDC" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="numero" not-null="true"/>
+            </key>
+            <one-to-many class="com.hibernate"></one-to-many>
+        </set>
+ 
+   </class>
+</hibernate-mapping>
