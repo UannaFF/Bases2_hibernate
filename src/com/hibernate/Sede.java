@@ -6,6 +6,7 @@ public class Sede {
 	private String[] telefonos;
 	private String moneda;
 	private Empresa empresa;
+	private Ciudad ciudad;
 	
 	public String getId_sede() {
 		return id_sede;
@@ -36,6 +37,12 @@ public class Sede {
 	}
 	public void setEmpresa(Empresa empresa) {
 		this.empresa = empresa;
+	}
+	public Ciudad getCiudad() {
+		return ciudad;
+	}
+	public void setCiudad(Ciudad ciudad) {
+		this.ciudad = ciudad;
 	}
 
 }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hibernate">
+
+	<class name="com.hibernate.Ciudad" table="CIUDAD">
+		<id name= "id_ciudad"/>
+		<property name="nombre"/>
+		<property name="pais"/>
+		<property name="sedes"/>
+
+		<set name="sedes" table="sede" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_sede" not-null="true"/>
+            </key>
+            <one-to-many class="com.hibernate.Sede"></one-to-many>
+        </set>
+
+	</class>
+</hibernate-mapping>
