@@ -27,8 +27,8 @@
         <property name="hbm2ddl.auto">create</property>
  
         <!-- Mention here all the model classes along with their package name -->
- 		<mapping class="com.hibernate.TDC"/>
- 		<mapping class="com.hibernate.Cliente"/>
- 		 
+ 		<!-- <mapping class="com.hibernate.TDC.hbm.xml"/> -->
+ 		<mapping resource="Cliente.hbm.xml"/>
+ 		<mapping resource="TDC.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
