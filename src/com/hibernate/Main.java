@@ -26,7 +26,17 @@ public class Main {
 		cliente.setNombre("Anna");
 		cliente.setUsuario_red(new String[]{"uannaffani", "uannaff"});
 		
+		Cliente cliente2 = new Cliente();
+		cliente2.setUsername("UannaFFF");
+		cliente2.setApellido("GómezZ");
+		cliente2.setContrasena("drehrhhpp");
+		cliente2.setCorreo("anna.gomezz.op@gmail.com");
+		cliente2.setDinero_promocion(10.0);
+		cliente2.setFecha_nacimiento(new Date());
+		cliente2.setNombre("Annaa");
+		cliente2.setUsuario_red(new String[]{"uannaffanii", "uannaffiii"});
 		
+		session.save(cliente2);
 		//Agregando TDCs
 		TDC tdc = new TDC("Banco Venezuela", "Visa", 897854321, new Date(), "Anna", 174, "20801877");
 		
@@ -94,10 +104,14 @@ public class Main {
 		session.save(oferta);
 		
 		PromocionaOferta promo = new PromocionaOferta(new PromocionaOfertaID(sede1, oferta), 12);
+		PromocionaOferta promo2 = new PromocionaOferta(new PromocionaOfertaID(sede2, oferta), 12);
 		
-		
+		ComparteOferta comp = new ComparteOferta();
+		comp.setId_comparte(new ComparteOfertaID(oferta, cliente, cliente2));
+		session.save(comp);
 		//oferta.setSedes_oferta(new HashSet());
 		session.save(promo);
+		session.save(promo2);
 		//Agregando Clase Categoria
 		Categoria superCategoria = new Categoria();
 		superCategoria.setId_categoria("c001");

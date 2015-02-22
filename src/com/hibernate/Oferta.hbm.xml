@@ -32,5 +32,11 @@
             <one-to-many class="com.hibernate.PromocionaOferta"></one-to-many>
         </set>
         
+        <set name="compartidos" table="comparteoferta" inverse="true" lazy="false" fetch="select" cascade="all">
+            <key>
+                <column name="oferta" not-null="true"/>
+            </key>
+            <one-to-many class="com.hibernate.ComparteOferta"></one-to-many>
+        </set>
    </class>
 </hibernate-mapping>

@@ -18,6 +18,7 @@
               <one-to-many class="com.hibernate.Categoria" />
      </set>
      
+     
 </class>
 
 </hibernate-mapping>

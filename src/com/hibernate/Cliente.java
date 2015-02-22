@@ -27,6 +27,23 @@ public class Cliente {
 	private Set<Ciudad> ciudades;
 	private Set<Oferta> ofertas_guardadas;
 	
+	//Roles-comparte
+	private Set<ComparteOferta> informador;
+	private Set<ComparteOferta> informado;
+		
+	public Set<ComparteOferta> getInformador() {
+		return informador;
+	}
+	public void setInformador(Set<ComparteOferta> informador) {
+		this.informador = informador;
+	}
+	public Set<ComparteOferta> getInformado() {
+		return informado;
+	}
+	public void setInformado(Set<ComparteOferta> informado) {
+		this.informado = informado;
+	}
+	
 	public Set<Oferta> getOfertas_guardadas() {
 		return ofertas_guardadas;
 	}

@@ -30,7 +30,7 @@ public class PromocionaOfertaID implements Serializable {
  
         PromocionaOfertaID that = (PromocionaOfertaID) o;
  
-        if (id_sede != null ? !id_sede.equals(that.getId_sede()) : that.getNombre() != null) return false;
+        if (id_sede != null ? !id_sede.equals(that.getId_sede()) : that.getId_sede() != null) return false;
         if (nombre != null ? !nombre.equals(that.getNombre()) : that.getNombre() != null)
             return false;
  

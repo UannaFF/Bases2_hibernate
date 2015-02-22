@@ -15,7 +15,17 @@ public class Oferta {
 	private Date fecha_fin_uso;
 	private Set<Cliente> clientes;
 	private Set<PromocionaOferta> sedes_oferta;
+	private Set<ComparteOferta> compartidos;
 	
+	
+	public Set<ComparteOferta> getCompartidos() {
+		return compartidos;
+	}
+
+	public void setCompartidos(Set<ComparteOferta> compartidos) {
+		this.compartidos = compartidos;
+	}
+
 	public Oferta(String nom, String des, double ori, double ofer, Date ini_compra, Date fin_compra, Date ini_uso, Date fin_uso) {
 		this.nombre = nom;
 		this.descripcion = des;

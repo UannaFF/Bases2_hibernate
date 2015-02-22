@@ -39,5 +39,6 @@
  		<mapping resource = "com/hibernate/Oferta.hbm.xml"/>
  		<mapping resource = "com/hibernate/Cupon.hbm.xml"/>
  		<mapping resource = "com/hibernate/PromocionaOferta.hbm.xml"/>
+ 		<mapping resource = "com/hibernate/ComparteOferta.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
