@@ -1,8 +1,10 @@
 package com.hibernate;
 
 import java.util.Date;
+import java.util.Set;
 
 public class Oferta {
+	
 	private String nombre;
 	private String descripcion;
 	private  double monto_original;
@@ -11,6 +13,14 @@ public class Oferta {
 	private Date periodo_fin_compra;
 	private Date fecha_inicio_uso;
 	private Date fecha_fin_uso;
+	private Set<Cliente> clientes;
+	
+	public Set<Cliente> getClientes() {
+		return clientes;
+	}
+	public void setClientes(Set<Cliente> clientes) {
+		this.clientes = clientes;
+	}
 	public String getNombre() {
 		return nombre;
 	}

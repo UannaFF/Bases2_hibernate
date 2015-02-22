@@ -33,7 +33,9 @@ public class Main {
 		TDC tdc2 = new TDC("Banco Venezuela", "Visa", 897854322, new Date(), "Franca", 176, "20801879");
 		
 		
-		
+		Set<TDC> tarjetas = new HashSet<TDC>();
+		tarjetas.add(tdc);
+		tarjetas.add(tdc2);
 		
 		//agregando empresa
 		Empresa empresa = new Empresa();
@@ -64,10 +66,10 @@ public class Main {
 		ciudades.add(ciudad1);
 		
 		cliente.setCiudades(ciudades);
+		cliente.setTarjetas(tarjetas);
 		tdc.setCliente(cliente);
 		tdc2.setCliente(cliente);
-		session.save(tdc);
-		session.save(tdc2);
+		session.save(cliente);
 		
 		//Agregando Sede
 		Sede sede1 = new Sede();

@@ -14,5 +14,16 @@
         <property name="periodo_fin_compra" type="date"/>
         <property name="fecha_inicio_uso" type="date"/>
         <property name ="fecha_fin_uso" type="date"/>
+        
+        <set name="clientes" table="GUARDAOFERTA" 
+        	inverse="false" lazy="true" fetch="select" cascade="all" >
+            <key>
+                <column name="nombre" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.hibernate.Cliente">
+                <column name="username" not-null="true" />
+            </many-to-many>
+        </set>
+        
    </class>
 </hibernate-mapping>

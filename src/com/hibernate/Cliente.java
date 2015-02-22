@@ -25,7 +25,16 @@ public class Cliente {
 	private double dinero_promocion;
 	private Set<TDC> tarjetas;
 	private Set<Ciudad> ciudades;
+	private Set<Oferta> ofertas_guardadas;
 	
+	public Set<Oferta> getOfertas_guardadas() {
+		return ofertas_guardadas;
+	}
+
+	public void setOfertas_guardadas(Set<Oferta> ofertas_guardadas) {
+		this.ofertas_guardadas = ofertas_guardadas;
+	}
+
 	public Set<Ciudad> getCiudades() {
 		return ciudades;
 	}

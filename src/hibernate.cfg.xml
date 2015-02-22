@@ -29,8 +29,9 @@
         <!-- Mention here all the model classes along with their package name -->
  		<!-- <mapping class="com.hibernate.TDC.hbm.xml"/> -->
  		<!-- <mapping class="com.hibernate.Sede.hbm.xml"/> -->
- 		<mapping resource="com/hibernate/Cliente.hbm.xml"/>
  		<mapping resource="com/hibernate/TDC.hbm.xml"/>
+ 		<mapping resource="com/hibernate/Cliente.hbm.xml"/>
+ 		
  		<mapping resource = "com/hibernate/Empresa.hbm.xml"/>
  		<mapping resource = "com/hibernate/Sede.hbm.xml"/>
  		<mapping resource = "com/hibernate/Ciudad.hbm.xml"/>
