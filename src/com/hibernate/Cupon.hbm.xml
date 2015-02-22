@@ -9,16 +9,12 @@ Both Person and Employee model class are defined within one hbm file.-->
 <hibernate-mapping>
  
   <class name="com.hibernate.Cupon" table="CUPON">
-        <id name="id" column="CUPON_ID">
-            <generator class="native"/>
-        </id>
+        <id name="id" column="CUPON_ID"/>
         <property name="fecha_compra" type="date"/>
   </class>
  
     <class name="com.hibernate.CuponTDC" table="CUPONTDC">
-        <id name="id" column="CUPON_ID">
-            <generator class="native"/>
-        </id>
+        <id name="id" column="CUPON_ID"/>
         <property name="fecha_compra" type="date"/>
         <property name="monto_subtotal"/>
         <property name="monto_impuestos"/>
@@ -26,9 +22,7 @@ Both Person and Employee model class are defined within one hbm file.-->
     </class>
  
     <class name="com.hibernate.CuponVirtual" table="CUPONVIRTUAL">
-        <id name="id" column="CUPON_ID">
-            <generator class="native"/>
-        </id>
+        <id name="id" column="CUPON_ID"/>
         <property name="fecha_compra" type="date"/>
         <property name="tasa_cambio"/>
     </class>
