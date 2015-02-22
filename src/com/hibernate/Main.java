@@ -99,6 +99,8 @@ public class Main {
 		session.save(subCategoria);
 		session.save(subCategoria1);
 		
+		CuponTDC cupontdc1 = new CuponTDC("iui", new Date(), 100.0, 100.0);
+		session.save(cupontdc1);
 		session.getTransaction().commit();
 		session.close();
 		sessionFactory.close();

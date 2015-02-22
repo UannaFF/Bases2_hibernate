@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+ 
+    <class name="com.hibernate.Oferta" table="OFERTA">
+        <id name="nombre"/>
+        <property name="descripcion"/>
+        <property name="monto_original"/>
+        <property name ="monto_ofertado"/>
+        <property name ="periodo_inicio_compra" type="date"/>
+        <property name="periodo_fin_compra" type="date"/>
+        <property name="fecha_inicio_uso" type="date"/>
+        <property name ="fecha_fin_uso" type="date"/>
+   </class>
+</hibernate-mapping>
