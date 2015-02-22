@@ -1,5 +1,6 @@
 package com.hibernate;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
@@ -23,8 +24,16 @@ public class Cliente {
 	private String[] usuario_red;
 	private double dinero_promocion;
 	private Set<TDC> tarjetas;
+	private Set<Ciudad> ciudades;
 	
-	
+	public Set<Ciudad> getCiudades() {
+		return ciudades;
+	}
+
+	public void setCiudades(Set<Ciudad> ciudades) {
+		this.ciudades = ciudades;
+	}
+
 	public Set<TDC> getTarjetas() {
 		return tarjetas;
 	}

@@ -1,6 +1,8 @@
 package com.hibernate;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -23,16 +25,15 @@ public class Main {
 		cliente.setFecha_nacimiento(new Date());
 		cliente.setNombre("Anna");
 		cliente.setUsuario_red(new String[]{"uannaffani", "uannaff"});
-		session.save(cliente);
+		
 		
 		//Agregando TDCs
 		TDC tdc = new TDC("Banco Venezuela", "Visa", 897854321, new Date(), "Anna", 174, "20801877");
-		tdc.setCliente(cliente);
-		TDC tdc2 = new TDC("Banco Venezuela", "Visa", 897854322, new Date(), "Franca", 176, "20801879");
-		tdc2.setCliente(cliente);
 		
-		session.save(tdc);
-		session.save(tdc2);
+		TDC tdc2 = new TDC("Banco Venezuela", "Visa", 897854322, new Date(), "Franca", 176, "20801879");
+		
+		
+		
 		
 		//agregando empresa
 		Empresa empresa = new Empresa();
@@ -50,13 +51,23 @@ public class Main {
 		ciudad.setId_ciudad(001);
 		ciudad.setNombre("Caracas");
 		ciudad.setPais("Venezuela");
-		session.save(ciudad);
+		//session.save(ciudad);
 	
 		Ciudad ciudad1 = new Ciudad();
 		ciudad1.setId_ciudad(002);
 		ciudad1.setNombre("Maracaibo");
 		ciudad1.setPais("Venezuela");
-		session.save(ciudad1);
+		//session.save(ciudad1);
+		
+		Set<Ciudad> ciudades = new HashSet<Ciudad>();
+		ciudades.add(ciudad);
+		ciudades.add(ciudad1);
+		
+		cliente.setCiudades(ciudades);
+		tdc.setCliente(cliente);
+		tdc2.setCliente(cliente);
+		session.save(tdc);
+		session.save(tdc2);
 		
 		//Agregando Sede
 		Sede sede1 = new Sede();
@@ -101,6 +112,7 @@ public class Main {
 		
 		CuponTDC cupontdc1 = new CuponTDC("iui", new Date(), 100.0, 100.0);
 		session.save(cupontdc1);
+		
 		session.getTransaction().commit();
 		session.close();
 		sessionFactory.close();

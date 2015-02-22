@@ -7,7 +7,14 @@ public class Ciudad {
 	private String nombre;
 	private String pais;
 	private Set<Sede> sedes; //Una Ciudad tiene un conjunto de sedes
+	private Set<Cliente> clientes;
 	
+	public Set<Cliente> getClientes() {
+		return clientes;
+	}
+	public void setClientes(Set<Cliente> clientes) {
+		this.clientes = clientes;
+	}
 	public int getId_ciudad() {
 		return id_ciudad;
 	}

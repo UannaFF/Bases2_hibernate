@@ -10,11 +10,14 @@
 		<property name="nombre"/>
 		<property name="pais"/>
 
-		<set name="sedes" table="sede" inverse="true" lazy="true" fetch="select">
+		<set name="clientes" table="EligeCiudad" 
+        	inverse="false" lazy="true" fetch="select" cascade="all" >
             <key>
-                <column name="id_sede" not-null="true"/>
+                <column name="id_ciudad" not-null="true" />
             </key>
-            <one-to-many class="com.hibernate.Sede"></one-to-many>
+            <many-to-many entity-name="com.hibernate.Cliente">
+                <column name="username" not-null="true" />
+            </many-to-many>
         </set>
 
 	</class>
