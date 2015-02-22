@@ -14,7 +14,25 @@ public class Oferta {
 	private Date fecha_inicio_uso;
 	private Date fecha_fin_uso;
 	private Set<Cliente> clientes;
+	private Set<PromocionaOferta> sedes_oferta;
 	
+	public Oferta(String nom, String des, double ori, double ofer, Date ini_compra, Date fin_compra, Date ini_uso, Date fin_uso) {
+		this.nombre = nom;
+		this.descripcion = des;
+		this.monto_original = ori;
+		this.monto_ofertado = ofer;
+		this.periodo_inicio_compra = ini_compra;
+		this.periodo_fin_compra = fin_compra;
+		this.fecha_inicio_uso = ini_uso;
+		this.fecha_fin_uso = fin_uso;
+	}
+	
+	public Set<PromocionaOferta> getSedes_oferta() {
+		return sedes_oferta;
+	}
+	public void setSedes_oferta(Set<PromocionaOferta> sedes_oferta) {
+		this.sedes_oferta = sedes_oferta;
+	}
 	public Set<Cliente> getClientes() {
 		return clientes;
 	}

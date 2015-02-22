@@ -25,7 +25,12 @@
 			<column name="id_empresa" not-null="true"/>
 		</many-to-one>
 		
-		
+		<set name="promos_ofertas" table="promocionaoferta" inverse="false" lazy="true" fetch="select" cascade="all">
+            <key>
+                <column name="id_sede" not-null="true"/>
+            </key>
+            <one-to-many class="com.hibernate.PromocionaOferta"></one-to-many>
+        </set>
 
 	</class>
 </hibernate-mapping>

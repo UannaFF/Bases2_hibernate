@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hibernate">
+
+	<class name="com.hibernate.PromocionaOferta" table="PROMOCIONAOFERTA" >
+		<composite-id name="id_promo" class="com.hibernate.PromocionaOfertaID" >
+            <key-many-to-one name="id_sede" />
+            <key-many-to-one name="nombre" />
+        </composite-id>
+		<property name="cantidad_ofertada"/>
+	</class>
+</hibernate-mapping>

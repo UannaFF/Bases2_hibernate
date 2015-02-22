@@ -90,6 +90,14 @@ public class Main {
 		sede2.setCiudad(ciudad1);
 		session.save(sede2);
 		
+		Oferta oferta = new Oferta("OFERTA 1", "descripcion 1", 300.0, 100.0, new Date(), new Date(), new Date(), new Date());
+		session.save(oferta);
+		
+		PromocionaOferta promo = new PromocionaOferta(new PromocionaOfertaID(sede1, oferta), 12);
+		
+		
+		//oferta.setSedes_oferta(new HashSet());
+		session.save(promo);
 		//Agregando Clase Categoria
 		Categoria superCategoria = new Categoria();
 		superCategoria.setId_categoria("c001");
