@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">   
+
+<hibernate-mapping package="com.hibernate">
+
+<class name="Categoria" table="CATEGORIA">
+  
+    <id name="id_categoria" />  
+    <property name="nombre"/>
+    <property name="descripcion"/>    
+    <many-to-one name="super_categoria" class="com.hibernate.Categoria" column="id_super_categoria"
+            not-null="false"/>
+            
+    <set name="sub_categoria" table="CATEGORIA" lazy="false" inverse="false">
+              <key column="id_sub_categoria"/>
+              <one-to-many class="com.hibernate.Categoria" />
+     </set>
+     
+</class>
+
+</hibernate-mapping>

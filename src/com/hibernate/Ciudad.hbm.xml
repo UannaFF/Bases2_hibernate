@@ -9,7 +9,6 @@
 		<id name= "id_ciudad"/>
 		<property name="nombre"/>
 		<property name="pais"/>
-		<property name="sedes"/>
 
 		<set name="sedes" table="sede" inverse="true" lazy="true" fetch="select">
             <key>

@@ -33,5 +33,7 @@
  		<mapping resource="com/hibernate/TDC.hbm.xml"/>
  		<mapping resource = "com/hibernate/Empresa.hbm.xml"/>
  		<mapping resource = "com/hibernate/Sede.hbm.xml"/>
+ 		<mapping resource = "com/hibernate/Ciudad.hbm.xml"/>
+ 		<mapping resource = "com/hibernate/Categoria.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
