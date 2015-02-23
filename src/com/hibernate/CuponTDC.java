@@ -1,6 +1,7 @@
 package com.hibernate;
 
 import java.util.Date;
+import java.util.Set;
 
 public class CuponTDC extends Cupon{
 	private double monto_subtotal;
@@ -13,6 +14,14 @@ public class CuponTDC extends Cupon{
 		//Me parece que impuestos podrian ser derivados, pero no se
 		this.monto_impuestos = impuestos;
 		this.monto_total = subtotal + impuestos;
+	}
+	
+	public void setRegalaOferta(Set<RegalaOferta> reg){
+		this.setRegala(reg);
+	}
+	
+	public Set<RegalaOferta> getRegalaOferta(){
+		return this.getRegala();
 	}
 	
 	public double getMonto_subtotal() {

@@ -106,8 +106,7 @@ public class Main {
 		PromocionaOferta promo = new PromocionaOferta(new PromocionaOfertaID(sede1, oferta), 12);
 		PromocionaOferta promo2 = new PromocionaOferta(new PromocionaOfertaID(sede2, oferta), 12);
 		
-		ComparteOferta comp = new ComparteOferta();
-		comp.setId_comparte(new ComparteOfertaID(oferta, cliente, cliente2));
+		ComparteOferta comp = new ComparteOferta(new ComparteOfertaID(oferta, cliente, cliente2));
 		session.save(comp);
 		//oferta.setSedes_oferta(new HashSet());
 		session.save(promo);
@@ -133,9 +132,10 @@ public class Main {
 		session.save(superCategoria);
 		session.save(subCategoria);
 		session.save(subCategoria1);
-		
 		CuponTDC cupontdc1 = new CuponTDC("iui", new Date(), 100.0, 100.0);
-		session.save(cupontdc1);
+		RegalaOferta regala1 = new RegalaOferta(new RegalaOfertaID(oferta, cliente, cliente2), cupontdc1);
+		
+		session.save(regala1);
 		
 		session.getTransaction().commit();
 		session.close();

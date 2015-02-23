@@ -8,6 +8,7 @@ public class ComparteOfertaID implements Serializable{
 	private Cliente cliente_informado;
 	
 	public ComparteOfertaID(Oferta of, Cliente informador, Cliente informado) {
+		super();
 		this.oferta = of;
 		this.cliente_informador = informador;
 		this.cliente_informado = informado;

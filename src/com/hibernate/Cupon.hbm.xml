@@ -11,6 +11,14 @@ Both Person and Employee model class are defined within one hbm file.-->
   <class name="com.hibernate.Cupon" table="CUPON">
         <id name="id" column="CUPON_ID"/>
         <property name="fecha_compra" type="date"/>
+        
+		<set name="regala" table="regalaoferta" inverse="false" lazy="true" fetch="select" cascade="all">
+            <key>
+                <column name="id" not-null="true"/>
+            </key>
+            <one-to-many class="com.hibernate.RegalaOferta"></one-to-many>
+        </set>
+        
   </class>
  
     <class name="com.hibernate.CuponTDC" table="CUPONTDC">

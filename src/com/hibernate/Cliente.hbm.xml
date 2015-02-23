@@ -55,6 +55,20 @@
             </key>
             <one-to-many class="com.hibernate.ComparteOferta"></one-to-many>
         </set>
+        
+         <set name="emisor" table="regalaoferta" inverse="true" lazy="false" fetch="select" cascade="all">
+            <key>
+                <column name="cliente_emisor" not-null="false"/>
+            </key>
+            <one-to-many class="com.hibernate.RegalaOferta"></one-to-many>
+        </set>
+        
+        <set name="receptor" table="regalaoferta" inverse="true" lazy="false" fetch="select" cascade="all">
+            <key>
+                <column name="cliente_receptor" not-null="false"/>
+            </key>
+            <one-to-many class="com.hibernate.RegalaOferta"></one-to-many>
+        </set>
  
    </class>
 </hibernate-mapping>

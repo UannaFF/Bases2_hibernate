@@ -16,8 +16,17 @@ public class Oferta {
 	private Set<Cliente> clientes;
 	private Set<PromocionaOferta> sedes_oferta;
 	private Set<ComparteOferta> compartidos;
+	private Set<RegalaOferta> regalados;
 	
 	
+	public Set<RegalaOferta> getRegalados() {
+		return regalados;
+	}
+
+	public void setRegalados(Set<RegalaOferta> regalados) {
+		this.regalados = regalados;
+	}
+
 	public Set<ComparteOferta> getCompartidos() {
 		return compartidos;
 	}

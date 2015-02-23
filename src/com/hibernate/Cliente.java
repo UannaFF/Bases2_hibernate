@@ -30,7 +30,23 @@ public class Cliente {
 	//Roles-comparte
 	private Set<ComparteOferta> informador;
 	private Set<ComparteOferta> informado;
+	
+	//Roles-regala
+	private Set<RegalaOferta> emisor;
+	private Set<RegalaOferta> receptor;
 		
+	public Set<RegalaOferta> getEmisor() {
+		return emisor;
+	}
+	public void setEmisor(Set<RegalaOferta> emisor) {
+		this.emisor = emisor;
+	}
+	public Set<RegalaOferta> getReceptor() {
+		return receptor;
+	}
+	public void setReceptor(Set<RegalaOferta> receptor) {
+		this.receptor = receptor;
+	}
 	public Set<ComparteOferta> getInformador() {
 		return informador;
 	}

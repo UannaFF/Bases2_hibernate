@@ -8,6 +8,7 @@ public class PromocionaOferta implements Serializable{
 	private int cantidad_ofertada;
 	
 	public PromocionaOferta(PromocionaOfertaID id, int cant) {
+		super();
 		this.id_promo = id;
 		this.cantidad_ofertada = cant;
 	}

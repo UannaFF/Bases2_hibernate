@@ -1,6 +1,7 @@
 package com.hibernate;
 
 import java.util.Date;
+import java.util.Set;
 
 public class CuponVirtual extends Cupon{
 	//Aclarar que es esto
@@ -9,6 +10,14 @@ public class CuponVirtual extends Cupon{
 	public CuponVirtual(String i, Date fecha, double tasa){
 		super(i, fecha);
 		this.tasa_cambio = tasa;
+	}
+	
+	public void setRegalaOferta(Set<RegalaOferta> reg){
+		this.setRegala(reg);
+	}
+	
+	public Set<RegalaOferta> getRegalaOferta(){
+		return this.getRegala();
 	}
 	
 	public double getTasa_cambio() {

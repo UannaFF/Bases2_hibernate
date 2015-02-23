@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hibernate">
+
+	<class name="com.hibernate.RegalaOferta" table="REGALAOFERTA" >
+		<composite-id name="id_regala" class="com.hibernate.RegalaOfertaID" >
+            <key-many-to-one name="oferta" />
+            <key-many-to-one name="cliente_emisor" />
+            <key-many-to-one name="cliente_receptor" />
+        </composite-id>
+
+        <many-to-one name="cupon" class="com.hibernate.Cupon" fetch="select" cascade="all">
+            <column name="id" not-null="true">
+        </column>
+        </many-to-one>
+	</class>
+</hibernate-mapping>

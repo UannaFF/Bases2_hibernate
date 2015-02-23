@@ -1,14 +1,25 @@
 package com.hibernate;
 
 import java.util.Date;
+import java.util.Set;
 
 public class Cupon {
 	private String id;
 	private Date fecha_compra;
+	private Set<RegalaOferta> regala;
 	
-	public Cupon(String i, Date fecha) {
-		this.id = i;
-		this.fecha_compra = fecha;
+	public Cupon(String id, Date fecha_compra) {
+		super();
+		this.id = id;
+		this.fecha_compra = fecha_compra;
+	}
+
+	public Set<RegalaOferta> getRegala() {
+		return regala;
+	}
+
+	public void setRegala(Set<RegalaOferta> regala) {
+		this.regala = regala;
 	}
 	
 	public String getId() {

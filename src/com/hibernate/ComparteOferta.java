@@ -5,6 +5,11 @@ import java.io.Serializable;
 public class ComparteOferta implements Serializable{
 	private ComparteOfertaID id_comparte;
 
+	public ComparteOferta(ComparteOfertaID id_comparte) {
+		super();
+		this.id_comparte = id_comparte;
+	}
+
 	public ComparteOfertaID getId_comparte() {
 		return id_comparte;
 	}
