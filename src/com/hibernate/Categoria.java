@@ -10,6 +10,9 @@ public class Categoria {
 	//Roles
 	private Categoria super_categoria;
 	private Set<Categoria> sub_categoria = new HashSet<Categoria>();
+	private Set<Empresa> empresas;
+	private Set<Cliente> clientes;
+	private Set<Oferta> ofertas;
 	
 	public String getId_categoria() {
 		return id_categoria;
@@ -40,6 +43,24 @@ public class Categoria {
 	}
 	public void setSub_categoria(Set<Categoria> sub_categoria) {
 		this.sub_categoria = sub_categoria;
+	}
+	public Set<Empresa> getEmpresas() {
+		return empresas;
+	}
+	public void setEmpresas(Set<Empresa> empresas) {
+		this.empresas = empresas;
+	}
+	public Set<Cliente> getClientes() {
+		return clientes;
+	}
+	public void setClientes(Set<Cliente> clientes) {
+		this.clientes = clientes;
+	}
+	public Set<Oferta> getOfertas() {
+		return ofertas;
+	}
+	public void setOfertas(Set<Oferta> ofertas) {
+		this.ofertas = ofertas;
 	}
 
 }

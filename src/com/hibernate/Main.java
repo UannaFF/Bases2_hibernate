@@ -37,6 +37,32 @@ public class Main {
 		tarjetas.add(tdc);
 		tarjetas.add(tdc2);
 		
+		//Agregando Clase Categoria
+		Categoria superCategoria = new Categoria();
+		superCategoria.setId_categoria("c001");
+		superCategoria.setNombre("Belleza");
+		superCategoria.setDescripcion("Servicios y artículos de belleza");
+		
+		Categoria subCategoria = new Categoria();
+		subCategoria.setId_categoria("c002");
+		subCategoria.setNombre("Maquillaje");
+		subCategoria.setDescripcion("Servicios y artículos de maquillaje");
+		subCategoria.setSuper_categoria(superCategoria);//seteo la super categoria a la subcategoria
+		
+		Categoria subCategoria1 = new Categoria();
+		subCategoria1.setId_categoria("c003");
+		subCategoria1.setNombre("Piel");
+		subCategoria1.setDescripcion("Servicios y artículos para el cuidado de la piel");
+		subCategoria1.setSuper_categoria(superCategoria);
+		
+		//session.save(superCategoria);
+		//session.save(subCategoria);
+		session.save(subCategoria1);
+		
+		Set<Categoria> conjuntoCategoria = new HashSet<Categoria>();
+		conjuntoCategoria.add(superCategoria);
+		conjuntoCategoria.add(subCategoria);
+		
 		//agregando empresa
 		Empresa empresa = new Empresa();
 		empresa.setContrasena("1234");
@@ -45,8 +71,14 @@ public class Main {
 		empresa.setId_empresa("id123");
 		empresa.setNombre("Empresa Sulca");
 		empresa.setLinks(new String[] {"sulca.com", "facebook.sulca.com", "twitter.sulca.com"});
-		
+		//ACA QUEDE
+		empresa.setCategorias(conjuntoCategoria);
 		session.save(empresa);
+		
+		//superCategoria.getEmpresas().add(empresa);
+		//subCategoria.getEmpresas().add(empresa);
+		//session.save(superCategoria);
+		//session.save(subCategoria);
 		
 		//Agregando Ciudad
 		Ciudad ciudad = new Ciudad();
@@ -90,27 +122,7 @@ public class Main {
 		sede2.setCiudad(ciudad1);
 		session.save(sede2);
 		
-		//Agregando Clase Categoria
-		Categoria superCategoria = new Categoria();
-		superCategoria.setId_categoria("c001");
-		superCategoria.setNombre("Belleza");
-		superCategoria.setDescripcion("Servicios y artículos de belleza");
 		
-		Categoria subCategoria = new Categoria();
-		subCategoria.setId_categoria("c002");
-		subCategoria.setNombre("Maquillaje");
-		subCategoria.setDescripcion("Servicios y artículos de maquillaje");
-		subCategoria.setSuper_categoria(superCategoria);//seteo la super categoria a la subcategoria
-		
-		Categoria subCategoria1 = new Categoria();
-		subCategoria1.setId_categoria("c003");
-		subCategoria1.setNombre("Piel");
-		subCategoria1.setDescripcion("Servicios y artículos para el cuidado de la piel");
-		subCategoria1.setSuper_categoria(superCategoria);
-		
-		session.save(superCategoria);
-		session.save(subCategoria);
-		session.save(subCategoria1);
 		
 		CuponTDC cupontdc1 = new CuponTDC("iui", new Date(), 100.0, 100.0);
 		session.save(cupontdc1);

@@ -7,7 +7,7 @@ public class Oferta {
 	
 	private String nombre;
 	private String descripcion;
-	private  double monto_original;
+	private double monto_original;
 	private double monto_ofertado;
 	private Date periodo_inicio_compra;
 	private Date periodo_fin_compra;

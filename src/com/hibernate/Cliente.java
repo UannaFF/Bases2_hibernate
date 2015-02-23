@@ -26,6 +26,7 @@ public class Cliente {
 	private Set<TDC> tarjetas;
 	private Set<Ciudad> ciudades;
 	private Set<Oferta> ofertas_guardadas;
+	private Set<Categoria> categorias;
 	
 	public Set<Oferta> getOfertas_guardadas() {
 		return ofertas_guardadas;
@@ -113,6 +114,14 @@ public class Cliente {
 
 	public void setDinero_promocion(double dinero_promocion) {
 		this.dinero_promocion = dinero_promocion;
+	}
+
+	public Set<Categoria> getCategorias() {
+		return categorias;
+	}
+
+	public void setCategorias(Set<Categoria> categorias) {
+		this.categorias = categorias;
 	}
 
 }

@@ -1,5 +1,6 @@
 package com.hibernate;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Empresa {
@@ -10,6 +11,7 @@ public class Empresa {
 	private String nombre;
 	private String[] links;
 	private Set<Sede> sedes; // La empresa tiene un set de sedes
+	private Set<Categoria> categorias;
 	
 	public String getUser_name() {
 		return user_name;
@@ -52,6 +54,12 @@ public class Empresa {
 	}
 	public void setSedes(Set<Sede> sedes) {
 		this.sedes = sedes;
+	}
+	public Set<Categoria> getCategorias() {
+		return categorias;
+	}
+	public void setCategorias(Set<Categoria> categorias) {
+		this.categorias = categorias;
 	}
 	
 }
