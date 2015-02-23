@@ -1,5 +1,7 @@
 package com.hibernate;
 
+import java.util.Set;
+
 public class Sede {
 	private String id_sede;
 	private String ubicacion;
@@ -7,7 +9,14 @@ public class Sede {
 	private String moneda;
 	private Empresa empresa;
 	private Ciudad ciudad;
+	private Set<PromocionaOferta> promos_ofertas;
 	
+	public Set<PromocionaOferta> getPromos_ofertas() {
+		return promos_ofertas;
+	}
+	public void setPromos_ofertas(Set<PromocionaOferta> promos_ofertas) {
+		this.promos_ofertas = promos_ofertas;
+	}
 	public String getId_sede() {
 		return id_sede;
 	}

@@ -1,17 +1,7 @@
 package com.hibernate;
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 
 public class Cliente {
 	
@@ -27,6 +17,23 @@ public class Cliente {
 	private Set<Ciudad> ciudades;
 	private Set<Oferta> ofertas_guardadas;
 	private Set<Categoria> categorias;
+	
+	//Roles-comparte
+	private Set<ComparteOferta> informador;
+	private Set<ComparteOferta> informado;
+		
+	public Set<ComparteOferta> getInformador() {
+		return informador;
+	}
+	public void setInformador(Set<ComparteOferta> informador) {
+		this.informador = informador;
+	}
+	public Set<ComparteOferta> getInformado() {
+		return informado;
+	}
+	public void setInformado(Set<ComparteOferta> informado) {
+		this.informado = informado;
+	}
 	
 	public Set<Oferta> getOfertas_guardadas() {
 		return ofertas_guardadas;

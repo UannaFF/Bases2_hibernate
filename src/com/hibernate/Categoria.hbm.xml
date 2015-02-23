@@ -25,14 +25,14 @@
             <many-to-many column="id_empresa" class="com.hibernate.Empresa"></many-to-many>
     </set>
      
-    <set name="cliente" table="CLIENTE_SELECCIONA_CATEGORIA" inverse="false" lazy="true" fetch="select" cascade="all"> 
+    <set name="clientes" table="CLIENTE_SELECCIONA_CATEGORIA" inverse="false" lazy="true" fetch="select" cascade="all"> 
          <key>
             <column name="id_categoria" not-null="true"/>
          </key>
             <many-to-many column="id_cliente" class="com.hibernate.Cliente"></many-to-many>
     </set>
     
-    <set name="oferta" table="OFERTA_PERTENECE_CATEGORIA" inverse="false" lazy="true" fetch="select" cascade="all"> 
+    <set name="ofertas" table="OFERTA_PERTENECE_CATEGORIA" inverse="false" lazy="true" fetch="select" cascade="all"> 
          <key>
             <column name="id_categoria" not-null="true"/>
          </key>
