@@ -25,6 +25,16 @@
             </many-to-many>
         </set>
         
+        <set name="categorias" table="OFERTA_PERTENECE_CATEGORIA" inverse="false"
+			lazy="true" fetch="select" cascade="all">
+			<key>
+				<column name="nombre" not-null="true" />
+			</key>
+			<many-to-many entity-name="com.hibernate.Categoria">
+				<column name="id_categoria" not-null="true" />
+			</many-to-many>
+		</set>
+        
 		<set name="sedes_oferta" table="promocionaoferta" inverse="true" lazy="false" fetch="select" cascade="all">
             <key>
                 <column name="nombre" not-null="true"/>
@@ -47,3 +57,4 @@
         </set>
    </class>
 </hibernate-mapping>
+

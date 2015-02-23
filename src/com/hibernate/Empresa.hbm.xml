@@ -18,6 +18,15 @@
             </key>
             <one-to-many class="com.hibernate.Sede"></one-to-many>
         </set>
+        
+        <set name="categorias" table="EMPRESA_CATEGORIA" inverse="false" lazy="true" fetch="select" cascade="all"> 
+         <key>
+            <column name="id_empresa" not-null="true"/>
+         </key>
+            <many-to-many column="id_categoria" class="com.hibernate.Categoria"></many-to-many>
+        </set>
+        
+   
  
    </class>
 </hibernate-mapping>

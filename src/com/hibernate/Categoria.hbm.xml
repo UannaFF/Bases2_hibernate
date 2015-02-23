@@ -16,9 +16,29 @@
     <set name="sub_categoria" table="CATEGORIA" lazy="false" inverse="false">
               <key column="id_sub_categoria"/>
               <one-to-many class="com.hibernate.Categoria" />
-     </set>
+    </set>
+    
+    <set name="empresas" table="EMPRESA_CATEGORIA" inverse="false" lazy="true" fetch="select" cascade="all"> 
+         <key>
+            <column name="id_categoria" not-null="true"/>
+         </key>
+            <many-to-many column="id_empresa" class="com.hibernate.Empresa"></many-to-many>
+    </set>
      
-     
+    <set name="clientes" table="CLIENTE_SELECCIONA_CATEGORIA" inverse="false" lazy="true" fetch="select" cascade="all"> 
+         <key>
+            <column name="id_categoria" not-null="true"/>
+         </key>
+            <many-to-many column="username" class="com.hibernate.Cliente"></many-to-many>
+    </set>
+    
+    <set name="ofertas" table="OFERTA_PERTENECE_CATEGORIA" inverse="false" lazy="true" fetch="select" cascade="all"> 
+         <key>
+            <column name="id_categoria" not-null="true"/>
+         </key>
+            <many-to-many column="nombre" class="com.hibernate.Oferta"></many-to-many>
+    </set>
+    
 </class>
 
 </hibernate-mapping>

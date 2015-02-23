@@ -1,17 +1,7 @@
 package com.hibernate;
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 
 public class Cliente {
 	
@@ -26,6 +16,7 @@ public class Cliente {
 	private Set<TDC> tarjetas;
 	private Set<Ciudad> ciudades;
 	private Set<Oferta> ofertas_guardadas;
+	private Set<Categoria> categorias;
 	
 	//Roles-comparte
 	private Set<ComparteOferta> informador;
@@ -146,6 +137,14 @@ public class Cliente {
 
 	public void setDinero_promocion(double dinero_promocion) {
 		this.dinero_promocion = dinero_promocion;
+	}
+
+	public Set<Categoria> getCategorias() {
+		return categorias;
+	}
+
+	public void setCategorias(Set<Categoria> categorias) {
+		this.categorias = categorias;
 	}
 
 }

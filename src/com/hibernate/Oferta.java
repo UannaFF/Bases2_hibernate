@@ -7,7 +7,7 @@ public class Oferta {
 	
 	private String nombre;
 	private String descripcion;
-	private  double monto_original;
+	private double monto_original;
 	private double monto_ofertado;
 	private Date periodo_inicio_compra;
 	private Date periodo_fin_compra;
@@ -17,6 +17,7 @@ public class Oferta {
 	private Set<PromocionaOferta> sedes_oferta;
 	private Set<ComparteOferta> compartidos;
 	private Set<RegalaOferta> regalados;
+	private Set<Categoria> categorias;
 	
 	
 	public Set<RegalaOferta> getRegalados() {
@@ -105,5 +106,13 @@ public class Oferta {
 	}
 	public void setFecha_fin_uso(Date fecha_fin_uso) {
 		this.fecha_fin_uso = fecha_fin_uso;
+	}
+
+	public Set<Categoria> getCategorias() {
+		return categorias;
+	}
+
+	public void setCategorias(Set<Categoria> categorias) {
+		this.categorias = categorias;
 	}
 }

@@ -42,6 +42,16 @@
             </many-to-many>
         </set>
         
+        <set name="categorias" table="CLIENTE_SELECCIONA_CATEGORIA" 
+        	inverse="false" lazy="true" fetch="select" cascade="all" >
+            <key>
+                <column name="username" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.hibernate.Categoria">
+                <column name="id_categoria" not-null="true" />
+            </many-to-many>
+		</set>
+		
         <set name="informador" table="comparteoferta" inverse="true" lazy="false" fetch="select" cascade="all">
             <key>
                 <column name="cliente_informador" not-null="false"/>
