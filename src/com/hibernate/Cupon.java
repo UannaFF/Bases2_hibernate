@@ -8,6 +8,8 @@ public class Cupon {
 	private Date fecha_compra;
 	private Set<RegalaOferta> regala;
 	
+	protected Cupon(){}
+	
 	public Cupon(String id, Date fecha_compra) {
 		super();
 		this.id = id;

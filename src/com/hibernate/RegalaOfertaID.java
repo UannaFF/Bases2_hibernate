@@ -7,6 +7,8 @@ public class RegalaOfertaID implements Serializable{
 	private Cliente cliente_emisor;
 	private Cliente cliente_receptor;
 	
+	protected RegalaOfertaID(){}
+	
 	public RegalaOfertaID(Oferta oferta, Cliente cliente_emisor,
 			Cliente cliente_receptor) {
 		super();

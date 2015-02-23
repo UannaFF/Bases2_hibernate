@@ -6,6 +6,8 @@ public class PromocionaOfertaID implements Serializable {
 	private Sede id_sede;
 	private Oferta nombre;
 	
+	protected PromocionaOfertaID(){}
+	
 	public PromocionaOfertaID(Sede sed, Oferta of) {
 		super();
 		this.id_sede = sed;

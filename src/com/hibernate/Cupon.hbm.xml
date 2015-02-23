@@ -8,31 +8,28 @@ Both Person and Employee model class are defined within one hbm file.-->
 
 <hibernate-mapping>
  
-  <class name="com.hibernate.Cupon" table="CUPON">
-        <id name="id" column="CUPON_ID"/>
-        <property name="fecha_compra" type="date"/>
+  <class name="com.hibernate.Cupon" table="CUPON" discriminator-value="Padre">
+        <id name="id" column="CUPON_ID" />
+        <discriminator column="DISCRIMINATOR" type="string"/>
         
-		<set name="regala" table="regalaoferta" inverse="false" lazy="true" fetch="select" cascade="all">
+        
+        <property name="fecha_compra" type="date"/>
+        <set name="regala" table="regalaoferta" inverse="false" lazy="true" fetch="select" cascade="all">
             <key>
                 <column name="id" not-null="true"/>
             </key>
             <one-to-many class="com.hibernate.RegalaOferta"></one-to-many>
         </set>
+        <subclass name="com.hibernate.CuponTDC" extends="Cupon" discriminator-value="TDC">
+	        <property name="monto_subtotal"/>
+	        <property name="monto_impuestos"/>
+	        <property name="monto_total"/>
+        </subclass>
+        
+        <subclass name="com.hibernate.CuponVirtual" extends="Cupon" discriminator-value="Virtual">
+        	<property name="tasa_cambio"/>
+        </subclass>
         
   </class>
- 
-    <class name="com.hibernate.CuponTDC" table="CUPONTDC">
-        <id name="id" column="CUPON_ID"/>
-        <property name="fecha_compra" type="date"/>
-        <property name="monto_subtotal"/>
-        <property name="monto_impuestos"/>
-        <property name="monto_total"/>
-    </class>
- 
-    <class name="com.hibernate.CuponVirtual" table="CUPONVIRTUAL">
-        <id name="id" column="CUPON_ID"/>
-        <property name="fecha_compra" type="date"/>
-        <property name="tasa_cambio"/>
-    </class>
   
 </hibernate-mapping>

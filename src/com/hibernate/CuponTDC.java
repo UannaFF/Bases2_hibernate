@@ -8,7 +8,8 @@ public class CuponTDC extends Cupon{
 	private double monto_impuestos;
 	private double monto_total;
 	
-	public CuponTDC(String id, Date fecha_c, double subtotal, double impuestos){
+	protected CuponTDC() {}
+	public CuponTDC(String id, Date fecha_c, double subtotal, double impuestos, double tot){
 		super(id, fecha_c);
 		this.monto_subtotal = subtotal;
 		//Me parece que impuestos podrian ser derivados, pero no se

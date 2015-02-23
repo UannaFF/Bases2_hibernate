@@ -10,11 +10,11 @@
     <id name="id_categoria" />  
     <property name="nombre"/>
     <property name="descripcion"/>    
-    <many-to-one name="super_categoria" class="com.hibernate.Categoria" column="id_super_categoria"
+    <many-to-one name="super_categoria"  class="com.hibernate.Categoria" column="id_super_categoria"
             not-null="false"/>
             
-    <set name="sub_categoria" table="CATEGORIA" lazy="false" inverse="false">
-              <key column="id_sub_categoria"/>
+    <set name="sub_categoria" table="CATEGORIA" lazy="false" inverse="true">
+              <key column="id_super_categoria"/>
               <one-to-many class="com.hibernate.Categoria" />
     </set>
     

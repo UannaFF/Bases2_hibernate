@@ -1,16 +1,21 @@
 package com.hibernate;
 
 import java.io.Serializable;
+import java.util.Date;
+
+import org.hibernate.Session;
 
 public class RegalaOferta implements Serializable{
 	
 	private RegalaOfertaID id_regala;
 	private Cupon cupon;
 	
-	public RegalaOferta(RegalaOfertaID id_regala, Cupon cup) {
+	protected RegalaOferta(){}
+	
+	public RegalaOferta(RegalaOfertaID id_regala, Cupon cupon) {
 		super();
 		this.id_regala = id_regala;
-		this.cupon = cup;
+		this.cupon = cupon;
 	}
 	
 	public Cupon getCupon() {

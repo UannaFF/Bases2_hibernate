@@ -7,6 +7,8 @@ public class CuponVirtual extends Cupon{
 	//Aclarar que es esto
 	private double tasa_cambio;
 
+	protected CuponVirtual(){}
+	
 	public CuponVirtual(String i, Date fecha, double tasa){
 		super(i, fecha);
 		this.tasa_cambio = tasa;

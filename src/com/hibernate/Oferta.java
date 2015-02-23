@@ -19,7 +19,29 @@ public class Oferta {
 	private Set<RegalaOferta> regalados;
 	private Set<Categoria> categorias;
 	
-	
+	protected Oferta() {}
+	public Oferta(String nombre, String descripcion, double monto_original,
+			double monto_ofertado, Date periodo_inicio_compra,
+			Date periodo_fin_compra, Date fecha_inicio_uso, Date fecha_fin_uso,
+			Set<Cliente> clientes, Set<PromocionaOferta> sedes_oferta,
+			Set<ComparteOferta> compartidos, Set<RegalaOferta> regalados,
+			Set<Categoria> categorias) {
+		super();
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.monto_original = monto_original;
+		this.monto_ofertado = monto_ofertado;
+		this.periodo_inicio_compra = periodo_inicio_compra;
+		this.periodo_fin_compra = periodo_fin_compra;
+		this.fecha_inicio_uso = fecha_inicio_uso;
+		this.fecha_fin_uso = fecha_fin_uso;
+		this.clientes = clientes;
+		this.sedes_oferta = sedes_oferta;
+		this.compartidos = compartidos;
+		this.regalados = regalados;
+		this.categorias = categorias;
+	}
+
 	public Set<RegalaOferta> getRegalados() {
 		return regalados;
 	}

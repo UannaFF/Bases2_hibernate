@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 public class ComparteOferta implements Serializable{
 	private ComparteOfertaID id_comparte;
+	
+	protected ComparteOferta(){}
 
 	public ComparteOferta(ComparteOfertaID id_comparte) {
 		super();
